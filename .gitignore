@@ -51,3 +51,4 @@ storage/*
 !.env.example
 
 .DS_Store
+.env
