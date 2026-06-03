@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Creater from */
+
+.creator-form-card .label {
+    display: block;
+    font-size: .88rem;
+    color: #292b2e;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+.creator-form-card .input {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    outline: none;
+}
+
+.creator-form-card .input:focus {
+    border-color: #f9a8d4;
+}
+
+.creator-form-card .section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.creator-form-card .section-desc {
+    font-size: .7rem;
+    color: #2d2e30;
+    margin-top: 2px;
+}
+
+.creator-form-card .os-password-input__toggle {
+    cursor: pointer;
+    position: absolute;
+    right: 23px;
+    top: 34px;
+    color: #bdbdbd;
+}
+
+
+.creator-form-card input:where([type=checkbox]) {
+
+    border: 1px solid #afb1b3;
+    border-radius: 5px;
+}
+
+
+/* Creater from */
+
+
+
+.video-performance-card .os-main-page th,
+.os-main-page td {
+    padding: 12px 15px;
+    border: 0px;
+}
+
+
+
+.video-performance-card .video-performance-card .os-main-page th {
+    border: 0px;
+}
+
+
+.video-performance-card th {
+    border: 0px;
+    background: white;
+}
+
+.creator-header-logo img {
+    width: 100px;
+}
+
+
+.creator-form-card .creator_Phoneno .input {
+    padding-left: 50px;
+}
+
+.creator_Phoneno .react-tel-input .flag-dropdown {
+    border-radius: 13px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.creator_Phoneno .react-tel-input .flag-dropdown.open .selected-flag {
+
+    border-radius: 13px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.creator_Phoneno .react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+    background-color: #fff;
+    border-radius: 13px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.view-count-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    /* right: 70px; */
+    background-color: #605953;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Mobile responsiveness for View Count Badge */
+@media (max-width: 992px) {
+  .view-count-badge {
+    top: 20px;
+    right: 70px;
+    left: unset;
+}
+}

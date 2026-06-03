@@ -1,0 +1,99 @@
+.os-modal__share {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+}
+
+.os-modal__share-soc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    max-width: 64px;
+}
+
+.os-modal__share-input {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.os-modal__share-input .os-input {
+    padding-right: 118px;
+}
+
+.os-modal__share-input .os-input:focus {
+    outline: none !important;
+}
+
+.os-modal__share-btn {
+    position: absolute;
+    right: 6px;
+    top: 7px;
+    bottom: 7px;
+    z-index: 2;
+    height: auto;
+    min-height: 0;
+    min-width: 104px;
+    padding: 0 22px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 0 !important;
+    border-style: none !important;
+    border-width: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.os-modal__share-btn:focus,
+.os-modal__share-btn:focus-visible,
+.os-modal__share-btn:active,
+.os-modal__share-btn:hover {
+    border: 0 !important;
+    border-style: none !important;
+    border-width: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 991px) {
+    .os-modal__share {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    /* Mobile/tablet: show only centered copy CTA with equal side spacing */
+    .os-modal__share-input {
+        padding-inline: 6px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .os-modal__share-input .os-input,
+    .os-modal__share-input .os-input:focus,
+    .os-modal__share-input .os-input:active {
+        display: none;
+    }
+
+    .os-modal__share-btn {
+        position: static !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}

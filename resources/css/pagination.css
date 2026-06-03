@@ -1,0 +1,30 @@
+.os-pagination {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.os-pagination__button, .os-pagination__number {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background-color: unset;
+    cursor: pointer;
+    transition: .3s;
+}
+.os-pagination__button--disable {
+    color: var(--grey);
+}
+.os-pagination__button:hover,
+.os-pagination__number:hover,
+.os-pagination__number--active {
+    background-color: var(--yellow);
+}
+@media (max-width: 991px) {
+    .os-pagination {
+        gap: 0;
+    }
+}

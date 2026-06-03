@@ -1,0 +1,242 @@
+/* Video Optimization Styles */
+
+/* Loading spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Image loading states */
+.image-placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Video container optimizations */
+.video-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-wrapper video {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Optimized image transitions */
+.optimized-image {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.optimized-image.loading {
+    opacity: 0.7;
+}
+
+.optimized-image.loaded {
+    opacity: 1;
+}
+
+.optimized-image.error {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+/* Video preload indicators */
+.video-preload-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 10;
+}
+
+.video-preload-indicator.preloading::before {
+    content: "⏳";
+    margin-right: 4px;
+}
+
+.video-preload-indicator.preloaded::before {
+    content: "✅";
+    margin-right: 4px;
+}
+
+/* Performance metrics display (development only) */
+.performance-metrics {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 12px;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.performance-metrics h4 {
+    margin: 0 0 8px 0;
+    color: #4CAF50;
+}
+
+.performance-metrics .metric {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+}
+
+.performance-metrics .metric.good {
+    color: #4CAF50;
+}
+
+.performance-metrics .metric.warning {
+    color: #FF9800;
+}
+
+.performance-metrics .metric.error {
+    color: #F44336;
+}
+
+/* Video quality indicators */
+.video-quality-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    z-index: 10;
+}
+
+/* Optimized carousel animations */
+.os-carouselMain {
+    contain: layout style paint;
+}
+
+.carousel-track {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Memory usage indicator */
+.memory-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 11px;
+    z-index: 1000;
+}
+
+.memory-indicator.low {
+    color: #4CAF50;
+}
+
+.memory-indicator.medium {
+    color: #FF9800;
+}
+
+.memory-indicator.high {
+    color: #F44336;
+}
+
+/* Service worker status */
+.sw-status {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+.sw-status.registered {
+    color: #4CAF50;
+}
+
+.sw-status.failed {
+    color: #F44336;
+}
+
+/* Video error states */
+.video-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    color: #999;
+    font-size: 14px;
+    min-height: 200px;
+}
+
+.video-error::before {
+    content: "⚠️";
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Optimized modal animations */
+.modal__panel {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .optimized-image,
+    .video-wrapper video,
+    .carousel-track,
+    .modal__panel {
+        transition: none;
+        animation: none;
+    }
+    
+    .image-placeholder {
+        animation: none;
+        background: #f0f0f0;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .performance-metrics,
+    .memory-indicator,
+    .sw-status {
+        background: #000;
+        border: 1px solid #fff;
+    }
+}
+
+/* Print styles */
+@media print {
+    .performance-metrics,
+    .memory-indicator,
+    .sw-status,
+    .video-preload-indicator,
+    .video-quality-indicator {
+        display: none;
+    }
+}

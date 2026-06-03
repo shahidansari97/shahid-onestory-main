@@ -1,0 +1,70 @@
+.os-image-generator {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+    gap: 24px;
+    border-radius: 24px;
+    background-color: #fff;
+}
+.os-image-generator__title-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+.os-image-generator__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+.os-image-generator__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    max-width: 300px;
+    width: 100%;
+}
+.os-image-generator__form-row {
+    display: flex;
+    gap: 16px;
+}
+.os-image-generator__error {
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.os-image-generator__output {
+    background-color: var(--light-grey);
+    margin-top: 25px;
+    height: 250px;
+    width: 100%;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.os-image-generator__image {
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    object-fit: cover;
+}
+.os-image-generator__output-message {
+    background: #F9F4EE;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+}
+.os-image-generator__output-message svg{
+    width: 21px;
+    display: block;
+}

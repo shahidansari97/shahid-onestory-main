@@ -1,0 +1,7 @@
+.os-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    justify-content: center;
+    align-items: center;
+}

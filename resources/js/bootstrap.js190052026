@@ -1,0 +1,31 @@
+import axios from 'axios';
+window.axios = axios;
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+/**
+ * Load Echo lazily so realtime boot does not block first paint.
+ */
+let echoLoaded = false;
+
+const loadEcho = () => {
+    if (echoLoaded) return;
+    echoLoaded = true;
+    import('./echo');
+};
+
+if (typeof window !== 'undefined') {
+    const scheduleEcho = () => {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadEcho, { timeout: 2500 });
+        } else {
+            setTimeout(loadEcho, 1500);
+        }
+    };
+
+    if (document.readyState === 'complete') {
+        scheduleEcho();
+    } else {
+        window.addEventListener('load', scheduleEcho, { once: true });
+    }
+}

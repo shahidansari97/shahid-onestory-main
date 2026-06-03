@@ -1,0 +1,242 @@
+.draft-page {
+  font-family: Inter, system-ui, sans-serif;
+  background: #f3f3f3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #1f2937;
+}
+
+.draft-page__card {
+  width: 100%;
+  max-width: 1180px;
+  min-height: 720px;
+  background: #fff8f8;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 50px;
+  box-shadow: 0 0 0 1px rgb(255 255 255), 0 6px 20px rgb(255 255 255);
+}
+
+.draft-page__card--loading {
+  min-height: 320px;
+  justify-content: center;
+}
+
+.draft-page__card--loading .draft-page__subtitle {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.draft-page__preview {
+  position: relative;
+  width: 290px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.draft-page__video {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  background: #000;
+  cursor: pointer;
+}
+
+.draft-page__poster {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  background: #000;
+}
+
+.draft-page__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.draft-page__play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.draft-page__play-btn::before {
+  content: "";
+  margin-left: 4px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 18px solid #b56df1;
+}
+
+.draft-page__timestamp {
+  position: absolute;
+  bottom: 9px;
+  left: 14px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #b7b7b7;
+  font-size: 9px;
+  font-weight: 500;
+  padding: 7px 10px;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.draft-page__content {
+  max-width: 370px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.draft-page__title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #24262a;
+  margin-bottom: 16px;
+  font-family: Poppins, Inter, system-ui, sans-serif;
+}
+
+.draft-page__subtitle {
+  color: #7a7676;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 42px;
+}
+
+.draft-page__btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.draft-page__btn {
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.draft-page__btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.draft-page__btn--primary {
+  background: #b27cdd;
+  color: #fff;
+}
+
+.draft-page__btn--primary:hover {
+  background: #a86adb;
+}
+
+.draft-page__btn--secondary {
+  background: #e7d1fb;
+  color: #8e41e7;
+}
+
+.draft-page__btn--secondary:hover {
+  background: #dcc1f8;
+}
+
+.draft-page__btn--outline {
+  background: #fff;
+  color: #6e6e6e;
+  border: 1px solid #e5e7eb;
+}
+
+.draft-page__btn--outline:hover {
+  background: #fafafa;
+}
+
+@media (max-width: 950px) {
+  .draft-page__card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px;
+    gap: 40px;
+    min-height: auto;
+  }
+
+  .draft-page__preview {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .draft-page__content {
+    align-items: center;
+  }
+
+  .draft-page__title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .draft-page {
+    padding: 12px;
+  }
+
+  .draft-page__card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .draft-page__video,
+  .draft-page__poster {
+    height: 430px;
+  }
+
+  .draft-page__title {
+    font-size: 29px;
+  }
+
+  .draft-page__subtitle {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .draft-page__btn {
+    height: 58px;
+    font-size: 15px;
+  }
+
+  .draft-page__play-btn {
+    width: 64px;
+    height: 64px;
+  }
+}

@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# If the request starts with /uploads, do NOT proxy
+RewriteCond %{REQUEST_URI} ^/uploads/
+RewriteRule ^ - [L]
+# WebSocket proxy for Socket.IO
+RewriteCond %{HTTP:Upgrade} =websocket [NC]
+RewriteRule ^socket.io/(.*) ws://127.0.0.1:4000/socket.io/$1 [P,L]
+
+# HTTP fallback for polling transport
+RewriteCond %{HTTP:Upgrade} !=websocket [NC]
+RewriteRule ^socket.io/(.*) http://127.0.0.1:4000/socket.io/$1 [P,L]
+
+# Optional: proxy all other traffic to Node.js
+RewriteCond %{REQUEST_URI} !^/socket.io/
+RewriteRule ^(.*)$ http://127.0.0.1:4000/$1 [P,L]
+
+# Do NOT rewrite real files or folders
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+
+# Proxy all remaining requests to Node.js
+RewriteRule ^(.*)$ http://localhost:4000/$1 [P,L]

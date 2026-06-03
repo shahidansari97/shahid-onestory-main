@@ -1,0 +1,92 @@
+.os-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 90px;
+    width: 100%;
+}
+.os-tabs__header {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    border-bottom: 2px solid var(--yellow);
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.tabs-track {
+    display: flex;
+    animation: scroll 140s linear infinite;
+}
+.tabs-static {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #ffda79 transparent;
+}
+
+/* Chrome, Safari, Edge */
+.tabs-static::-webkit-scrollbar {
+  height: 6px; /* Height of the scrollbar track */
+}
+
+.tabs-static::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.tabs-static::-webkit-scrollbar-thumb {
+  background-color: #ffda79;
+  border-radius: 10px;
+  border-top: 2px solid transparent;  /* Gap at the top */
+  border-bottom: 2px solid transparent;  /* Gap at the bottom */
+  background-clip: content-box;  /* Ensures gap works */
+}
+
+.tabs-track.paused {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.3333%);
+    }
+}
+.os-tabs__tab {
+    padding: 10px 52px;
+    border-width: 2px 2px 0px 2px;
+    border-style: solid;
+    border-color: var(--yellow);
+    border-radius: 42px 42px 0px 0px;
+    cursor: pointer;
+    transition: .3s;
+    white-space: nowrap;
+}
+.os-tabs__tab--active, .os-tabs__tab:hover{
+    background-color: var(--yellow);
+}
+@media (max-width: 991px) {
+    .os-tabs {
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+    .os-tabs__tab {
+        border: 2px solid var(--yellow);
+        padding: 10px 24px;
+    }
+    .os-tabs__header {
+        border: unset;
+        gap: 8px;
+        overflow-x: scroll;
+        width: 100%;
+    }
+}

@@ -1,0 +1,60 @@
+/* Spoken Stories comments modal (isolated styles; plain CSS so Vite build succeeds) */
+.ssc-shell {
+  position: relative;
+  width: min(92vw, 420px);
+  max-width: min(92vw, 420px);
+  overflow: visible;
+}
+
+.ssc-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+  min-height: 420px;
+  max-height: min(82vh, 640px);
+  padding-bottom: 84px;
+}
+
+.ssc-title {
+  padding: 16px 16px 8px;
+  text-align: left;
+  font-weight: 700;
+  color: #000;
+  font-family: Roboto, sans-serif;
+}
+
+.ssc-list {
+  padding: 8px 16px 12px;
+  overflow-y: auto;
+  max-height: min(82vh, 640px);
+}
+
+.ssc-composer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  padding: 16px 10px;
+}
+
+.ssc-textarea {
+  width: 100%;
+  resize: none;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #1f2937;
+  outline: none;
+}
+
+.ssc-textarea:focus {
+  border-color: #c8a9ef;
+  box-shadow: 0 0 0 2px rgba(200, 169, 239, 0.3);
+}
+

@@ -1,0 +1,127 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+.create_story:hover, .create_story:focus {
+    background: var(--gradient-1);
+}
+
+  .font-inter{
+  font-family: "Inter", sans-serif;
+  }
+.home_titlepage p{
+margin:0px;
+font-weight: 400;
+font-size: 30px;
+}
+
+.home_titlepage h1{
+margin:0px;
+font-weight: 400;
+font-size: 60px;
+}
+
+.homepage2btn {
+    display: flex;
+    gap: 20px;
+
+
+
+     /* display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+
+  width: 100%;
+  justify-items: center;
+  padding: 10px 130px;
+
+}
+
+.homepage2btn .os-btn--fs-m.os-btn--primary {
+    width: 80%;
+    font-size: 18px !IMPORTANT;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 991px) {
+    .homepage2btn{
+        padding: 54px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .homepage2btn .os-btn--fs-m.os-btn--primary {
+    width: 100%;
+    font-weight: 700 !important;
+
+}
+.home_titlepage h1 {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: normal;
+}
+
+.os-hero .addmore-css .top-title {
+    padding: 10px 0px;
+}
+
+.home_titlepage p {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 10px 30px 0px;
+}
+
+.addmore-css .top-title {
+    padding: 16px 0px;
+}
+
+.homepage2btn .os-btn {
+
+    width: 100%;
+
+}
+}
+
+@media (max-width: 768px) {
+    .os-hero.addmore-css {
+        padding: 0px 0px 8px !important;
+        gap: 2px;
+        margin-top: 0 !important;
+    }
+
+    .addmore-css .top-title {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .addmore-css .top-title h1,
+    .addmore-css .top-title h2,
+    .addmore-css .top-title p {
+        margin: 0 !important;
+    }
+
+    .addmore-css .os-hero__video {
+        margin: 0 !important;
+    }
+
+    .signup-btn-larger {
+        padding: 15px 40px !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+    }
+}
+
+.signup-btn-larger {
+    padding: 13px 40px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}

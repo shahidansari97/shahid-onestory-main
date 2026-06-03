@@ -1,0 +1,251 @@
+.profile-photo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.profile-photo-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(55, 48, 63, 0.42);
+}
+
+.profile-photo-modal__panel {
+    position: relative;
+    width: min(calc(100vw - 24px), 360px);
+    border-radius: 15px;
+    padding: clamp(20px, 4.5vw, 28px) clamp(18px, 4vw, 24px);
+    background: linear-gradient(160deg, #fdf4f9 0%, #f5ebf6 52%, #efe6f4 100%);
+    box-shadow: 0 12px 32px rgba(72, 58, 88, 0.12);
+}
+
+.profile-photo-modal__panel--prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: min(calc(100vw - 16px), 480px);
+    padding: clamp(22px, 4.5vw, 32px) clamp(14px, 3.5vw, 36px) clamp(18px, 3.5vw, 28px);
+}
+
+.profile-photo-modal__panel--preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: min(calc(100vw - 28px), 320px);
+    padding: clamp(18px, 4vw, 24px) clamp(16px, 3.5vw, 22px) clamp(16px, 3.5vw, 22px);
+}
+
+.profile-photo-modal__close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: 0;
+    background: transparent;
+    color: #6b6280;
+    font-size: clamp(16px, 4vw, 18px);
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.profile-photo-modal__title {
+    margin: 0 0 34px;
+    padding: 0 8px;
+    text-align: center;
+    color: #3d3648;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+}
+
+.profile-photo-modal__title--prompt {
+    margin: 0 0 clamp(10px, 2.5vw, 16px);
+    padding: 0;
+    width: 100%;
+    color: #5e548e;
+    font-size: clamp(9px, 2.75vw, 16px);
+    font-weight: 500;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+.profile-photo-modal__title--preview {
+    margin: 0 0 6px;
+    padding: 0;
+    color: #5e548e;
+    font-size: clamp(14px, 3.6vw, 16px);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.profile-photo-modal__subtitle {
+    margin: -10px 0 20px;
+    text-align: center;
+    color: #6b6575;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.profile-photo-modal__subtitle--preview {
+    margin: 0 0 clamp(12px, 3vw, 16px);
+    padding: 0 4px;
+    font-size: clamp(11px, 2.8vw, 13px);
+    line-height: 1.4;
+    max-width: 260px;
+}
+
+.profile-photo-modal__preview-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: clamp(12px, 3vw, 16px);
+}
+
+.profile-photo-modal__preview {
+    width: clamp(96px, 26vw, 120px);
+    height: clamp(96px, 26vw, 120px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 6px 18px rgba(90, 62, 120, 0.14);
+    background: #fff;
+}
+
+.profile-photo-modal__preview--empty {
+    background: #ece7f2;
+}
+
+.profile-photo-modal__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+}
+
+.profile-photo-modal__actions--prompt {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: clamp(10px, 2.8vw, 18px);
+    width: 100%;
+}
+
+.profile-photo-modal__actions--preview {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 10px);
+    width: 100%;
+}
+
+.profile-photo-modal__link-btn {
+    border: 0;
+    background: transparent;
+    color: #3d3648;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    cursor: pointer;
+    padding: 8px 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.profile-photo-modal__actions--prompt .profile-photo-modal__link-btn {
+    color: #5e548e;
+    font-size: clamp(9px, 2.5vw, 14px);
+    font-weight: 600;
+    padding: 4px 0;
+}
+
+.profile-photo-modal__link-btn--preview {
+    color: #5e548e;
+    font-size: clamp(11px, 2.8vw, 13px);
+    font-weight: 500;
+    padding: 4px 0;
+    white-space: normal;
+}
+
+.profile-photo-modal__primary-btn {
+    border: 0;
+    border-radius: 999px;
+    background: #f7ca44;
+    color: #1a1a1a;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 10px 24px;
+    min-height: auto;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.profile-photo-modal__primary-btn--compact {
+    font-size: clamp(9px, 2.5vw, 13px);
+    font-weight: 700;
+    padding: clamp(6px, 1.6vw, 8px) clamp(12px, 3vw, 18px);
+    background: #f7ca44;
+}
+
+.profile-photo-modal__primary-btn--save {
+    width: auto;
+    min-width: clamp(100px, 28vw, 120px);
+    font-size: clamp(12px, 3vw, 14px);
+    font-weight: 700;
+    padding: clamp(8px, 2vw, 10px) clamp(24px, 7vw, 32px);
+    background: #f7ca44;
+}
+
+.profile-photo-modal__primary-btn:hover {
+    background: #efbf32;
+}
+
+.profile-photo-modal__primary-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.profile-photo-modal__error {
+    margin: 0 0 10px;
+    text-align: center;
+    color: #b42318;
+    font-size: clamp(11px, 2.8vw, 13px);
+}
+
+.profile-photo-modal__input {
+    display: none;
+}
+
+@media (min-width: 521px) {
+    .profile-photo-modal__title--prompt {
+        font-size: 16px;
+    }
+
+    .profile-photo-modal__actions--prompt .profile-photo-modal__link-btn {
+        font-size: 14px;
+    }
+
+    .profile-photo-modal__primary-btn--compact {
+        font-size: 13px;
+        padding: 8px 18px;
+    }
+
+    .profile-photo-modal__panel--preview {
+        width: min(calc(100vw - 40px), 320px);
+    }
+}

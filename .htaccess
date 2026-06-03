@@ -1,0 +1,15 @@
+AuthUserFile "/home/smartpip/.htpasswds/one.story/passwd"
+AuthType Basic
+AuthName "My restricted Area"
+Require valid-user
+<FilesMatch ".(php4|php5|php3|php2|php|phtml)$">
+SetHandler application/x-httpd-alt-php82___lsphp
+</FilesMatch>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+<Files ".env">
+    Order allow,deny
+    Deny from all
+</Files>

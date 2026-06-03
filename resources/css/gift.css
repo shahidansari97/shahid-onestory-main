@@ -1,0 +1,93 @@
+.os-gift-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.os-gift-modal__top {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+.os-gift-modal__user {
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    border: 2px solid var(--yellow);
+    object-fit: cover;
+}
+.os-gift-modal__top-to {
+    padding: 8px 24px 8px 24px;
+    gap: 8px;
+    font-size: var(--font-size-m);
+    font-weight: bold;
+    line-height: 32px;
+    border-radius: 24px;
+    border: 2px solid var(--yellow);
+    background-color: var(--white);
+}
+
+.os-gift-modal__cards {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 38px;
+    margin-bottom: 12px;
+}
+
+.os-gift-card {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 16px;
+    border: 1px solid var(--light-grey);
+    transition: .3s;
+    cursor: pointer;
+    height: 216px;
+    width: 160px;
+    flex: none;
+    text-align: center;
+}
+
+.os-gift-card--error {
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+.os-gift-card:not(.os-gift-card--profile):hover, .os-gift-card--active:not(.os-gift-card--profile) {
+    background-color: var(--light-grey);
+}
+.os-gift-card--profile {
+    cursor: default;
+}
+@media (max-width: 991px) {
+    .os-gift-modal__user {
+        max-width: 80px;
+        height: 80px;
+    }
+    .os-gift-modal__cards {
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 0;
+    }
+    .os-gift-modal__cards .os-gift-card{
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        gap: 14px;
+        text-align: left;
+
+    }
+    .os-gift-modal__cards .os-gift-card  img{
+        width: 50px;
+        height: 50px;
+    }
+}
